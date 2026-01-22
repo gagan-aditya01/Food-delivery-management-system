@@ -1,9 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { ActivatedRoute, RouterLink } from "@angular/router";
+import { CartService } from "../../../core/services/cart.service";
 import { MenuService } from "../../../core/services/menu.service";
 import { RestaurantService } from "../../../core/services/restaurant.service";
 import { MenuItem } from "../../../shared/models/menu-item.model";
@@ -18,6 +20,7 @@ import { Restaurant } from "../../../shared/models/restaurant.model";
     MatCardModule,
     MatChipsModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
   ],
   templateUrl: "./menu-list.component.html",
   styleUrls: ["./menu-list.component.scss"],
@@ -30,6 +33,7 @@ export class MenuListComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
+    private readonly cartService: CartService,
     private readonly restaurantService: RestaurantService,
     private readonly menuService: MenuService,
   ) {}
@@ -67,5 +71,9 @@ export class MenuListComponent implements OnInit {
         this.isLoading = false;
       },
     });
+  }
+
+  addToCart(item: MenuItem): void {
+    this.cartService.addItem(item);
   }
 }

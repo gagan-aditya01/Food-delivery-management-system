@@ -1,0 +1,146 @@
+<section class="page-header">
+  <div>
+    <a class="back-link" routerLink="/cart">← Back to cart</a>
+    <h1>Checkout</h1>
+    <p>Enter your delivery details to place the order.</p>
+  </div>
+</section>
+
+<section class="checkout-grid">
+  <mat-card class="checkout-card">
+    <mat-card-title>Delivery Details</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()" class="checkout-form">
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Full name</mat-label>
+            <input matInput formControlName="name" placeholder="Alex Johnson" />
+            <mat-error
+              *ngIf="form.get('name')?.touched && form.get('name')?.invalid"
+            >
+              Name is required.
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Phone number</mat-label>
+            <input matInput formControlName="phone" placeholder="9876543210" />
+            <mat-error
+              *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid"
+            >
+              Enter a valid 10-digit number.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            placeholder="alex@email.com"
+          />
+          <mat-error
+            *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
+          >
+            Enter a valid email address.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Address</mat-label>
+          <input
+            matInput
+            formControlName="address"
+            placeholder="Street, Building, Area"
+          />
+          <mat-error
+            *ngIf="form.get('address')?.touched && form.get('address')?.invalid"
+          >
+            Address is required.
+          </mat-error>
+        </mat-form-field>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city">
+              <mat-option value="Mumbai">Mumbai</mat-option>
+              <mat-option value="Delhi">Delhi</mat-option>
+              <mat-option value="Bengaluru">Bengaluru</mat-option>
+              <mat-option value="Hyderabad">Hyderabad</mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="form.get('city')?.touched && form.get('city')?.invalid"
+            >
+              City is required.
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Postal code</mat-label>
+            <input matInput formControlName="postalCode" placeholder="400001" />
+            <mat-error
+              *ngIf="
+                form.get('postalCode')?.touched &&
+                form.get('postalCode')?.invalid
+              "
+            >
+              Enter a valid postal code.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-radio-group
+          formControlName="paymentMethod"
+          class="payment-methods"
+        >
+          <mat-radio-button value="cod">Cash on Delivery</mat-radio-button>
+          <mat-radio-button value="card">Card</mat-radio-button>
+          <mat-radio-button value="upi">UPI</mat-radio-button>
+        </mat-radio-group>
+
+        <button mat-raised-button color="primary" type="submit">
+          Place order
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="summary-card">
+    <mat-card-title>Order Summary</mat-card-title>
+    <mat-card-content>
+      <div class="summary-row" *ngFor="let item of items$ | async">
+        <span>{{ item.menuItem.name }} × {{ item.quantity }}</span>
+        <span>₹{{ item.menuItem.price * item.quantity }}</span>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>₹{{ (summary$ | async)?.subtotal }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax</span>
+        <span>₹{{ (summary$ | async)?.tax }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Delivery fee</span>
+        <span>₹{{ (summary$ | async)?.deliveryFee }}</span>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>₹{{ (summary$ | async)?.grandTotal }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<section class="empty-state" *ngIf="(items$ | async)?.length === 0">
+  <p>Your cart is empty. Add items before checking out.</p>
+  <a mat-raised-button color="primary" routerLink="/restaurants">
+    Browse restaurants
+  </a>
+</section>

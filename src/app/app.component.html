@@ -4,6 +4,14 @@
   <a mat-button routerLink="/restaurants" routerLinkActive="active-link"
     >Restaurants</a
   >
+  <a mat-button routerLink="/cart" routerLinkActive="active-link">
+    <span [matBadge]="(cartCount$ | async) ?? 0" matBadgeOverlap="false">
+      Cart
+    </span>
+  </a>
+  <a mat-button routerLink="/order-status" routerLinkActive="active-link">
+    Order Status
+  </a>
 </mat-toolbar>
 
 <main class="app-content">

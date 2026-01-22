@@ -1,0 +1,60 @@
+<section class="page-header">
+  <div>
+    <h1>Your Cart</h1>
+    <p>Review your items before checkout.</p>
+  </div>
+  <button mat-stroked-button color="warn" (click)="clear()">Clear cart</button>
+</section>
+
+<section class="empty-state" *ngIf="(items$ | async)?.length === 0">
+  <p>Your cart is empty.</p>
+  <a mat-raised-button color="primary" routerLink="/restaurants">
+    Browse restaurants
+  </a>
+</section>
+
+<section class="cart-list" *ngIf="(items$ | async)?.length">
+  <mat-card class="cart-item" *ngFor="let item of items$ | async">
+    <div class="item-info">
+      <h3>{{ item.menuItem.name }}</h3>
+      <p class="item-meta">{{ item.menuItem.category }}</p>
+      <p class="item-price">₹{{ item.menuItem.price }}</p>
+    </div>
+    <div class="item-actions">
+      <div class="quantity">
+        <button
+          mat-icon-button
+          (click)="decrease(item.menuItem.id, item.quantity)"
+        >
+          −
+        </button>
+        <span>{{ item.quantity }}</span>
+        <button
+          mat-icon-button
+          (click)="increase(item.menuItem.id, item.quantity)"
+        >
+          +
+        </button>
+      </div>
+      <button mat-button color="warn" (click)="remove(item.menuItem.id)">
+        Remove
+      </button>
+    </div>
+  </mat-card>
+
+  <mat-divider></mat-divider>
+
+  <div class="summary">
+    <div>
+      <strong>Total</strong>
+      <p class="hint">Taxes and delivery added at checkout.</p>
+    </div>
+    <div class="total">₹{{ total$ | async }}</div>
+  </div>
+
+  <div class="checkout-actions">
+    <a mat-raised-button color="primary" routerLink="/checkout">
+      Proceed to checkout
+    </a>
+  </div>
+</section>

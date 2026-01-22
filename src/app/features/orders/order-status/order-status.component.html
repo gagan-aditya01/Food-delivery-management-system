@@ -1,0 +1,87 @@
+<section class="page-header">
+  <div>
+    <h1>Order Status</h1>
+    <p>Track your latest order in real time.</p>
+  </div>
+</section>
+
+<section class="empty-state" *ngIf="(order$ | async) === null">
+  <p>No recent orders found.</p>
+  <a mat-raised-button color="primary" routerLink="/restaurants">
+    Browse restaurants
+  </a>
+</section>
+
+<section *ngIf="order$ | async as order" class="order-grid">
+  <mat-card class="status-card">
+    <mat-card-title>Status</mat-card-title>
+    <mat-card-content>
+      <div class="status-row">
+        <span class="status-label">Current status</span>
+        <mat-chip color="primary" selected>{{ order.status }}</mat-chip>
+      </div>
+      <div class="timeline">
+        <div
+          class="step"
+          *ngFor="let step of steps; let i = index"
+          [class.active]="i <= getStepIndex(order.status)"
+        >
+          <span class="dot"></span>
+          <span>{{ step }}</span>
+        </div>
+      </div>
+      <p class="updated">
+        Last updated: {{ order.createdAt | date: "medium" }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="summary-card">
+    <mat-card-title>Order Summary</mat-card-title>
+    <mat-card-content>
+      <div class="summary-row" *ngFor="let item of order.items">
+        <span>{{ item.menuItem.name }} × {{ item.quantity }}</span>
+        <span>₹{{ item.menuItem.price * item.quantity }}</span>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>₹{{ order.subtotal }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax</span>
+        <span>₹{{ order.tax }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Delivery fee</span>
+        <span>₹{{ order.deliveryFee }}</span>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>₹{{ order.totalAmount }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="delivery-card">
+    <mat-card-title>Delivery Details</mat-card-title>
+    <mat-card-content>
+      <p>
+        <strong>{{ order.customer.name }}</strong>
+      </p>
+      <p>{{ order.customer.phone }}</p>
+      <p>{{ order.customer.email }}</p>
+      <mat-divider></mat-divider>
+      <p>{{ order.deliveryAddress.address }}</p>
+      <p>
+        {{ order.deliveryAddress.city }} {{ order.deliveryAddress.postalCode }}
+      </p>
+      <p class="payment">Payment: {{ order.paymentMethod | uppercase }}</p>
+    </mat-card-content>
+  </mat-card>
+</section>

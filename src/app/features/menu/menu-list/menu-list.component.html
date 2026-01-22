@@ -38,6 +38,11 @@
         <mat-chip *ngIf="item.isPopular" selected>Popular</mat-chip>
       </div>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="addToCart(item)">
+        Add to cart
+      </button>
+    </mat-card-actions>
   </mat-card>
 </section>
 
