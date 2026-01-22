@@ -12,13 +12,13 @@
 
 .page-header p {
   margin: 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(226, 232, 240, 0.7);
 }
 
 .back-link {
-  color: #3f51b5;
+  color: #fbbf24;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .checkout-grid {
@@ -30,6 +30,9 @@
 .checkout-card,
 .summary-card {
   padding: 8px;
+  background: rgba(103, 129, 185, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #000000;
 }
 
 .checkout-form {
@@ -68,7 +71,7 @@
 .empty-state {
   padding: 32px 0;
   text-align: center;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(226, 232, 240, 0.7);
 }
 
 @media (max-width: 960px) {

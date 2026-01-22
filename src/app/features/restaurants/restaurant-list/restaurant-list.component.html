@@ -1,7 +1,30 @@
-<section class="page-header">
-  <div>
-    <h1>Restaurants</h1>
-    <p>Browse popular restaurants and cuisines near you.</p>
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">Fresh Picks</span>
+    <h1>Find your next favorite meal</h1>
+    <p>
+      Discover vibrant flavors, quick deliveries, and top-rated kitchens near
+      you.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Trending</span>
+      <span class="tag">Under 30 mins</span>
+      <span class="tag">New on the list</span>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <span class="stat-value">4.6+</span>
+      <span class="stat-label">Average rating</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">25-35</span>
+      <span class="stat-label">Minute delivery</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">50+</span>
+      <span class="stat-label">Curated menus</span>
+    </div>
   </div>
 </section>
 
@@ -20,16 +43,21 @@
     *ngFor="let restaurant of restaurants"
     [routerLink]="['/menu', restaurant.id]"
   >
-    <img mat-card-image [src]="restaurant.imageUrl" [alt]="restaurant.name" />
-    <mat-card-header>
-      <mat-card-title>{{ restaurant.name }}</mat-card-title>
-      <mat-card-subtitle>{{ restaurant.cuisineType }}</mat-card-subtitle>
-    </mat-card-header>
+    <div class="image-wrapper">
+      <img mat-card-image [src]="restaurant.imageUrl" [alt]="restaurant.name" />
+      <span class="rating-pill">{{ restaurant.rating }} ★</span>
+    </div>
     <mat-card-content>
+      <div class="card-header">
+        <div>
+          <h3>{{ restaurant.name }}</h3>
+          <p class="cuisine">{{ restaurant.cuisineType }}</p>
+        </div>
+        <span class="price-pill">{{ restaurant.priceRange }}</span>
+      </div>
       <div class="meta">
-        <mat-chip color="primary" selected>{{ restaurant.rating }} ★</mat-chip>
-        <span>{{ restaurant.deliveryTime }}</span>
-        <span>{{ restaurant.priceRange }}</span>
+        <span class="meta-pill">⏱ {{ restaurant.deliveryTime }}</span>
+        <span class="meta-pill">Free delivery</span>
       </div>
     </mat-card-content>
   </mat-card>

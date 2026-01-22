@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { MatCardModule } from "@angular/material/card";
-import { MatChipsModule } from "@angular/material/chips";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { RouterLink } from "@angular/router";
 import { RestaurantService } from "../../../core/services/restaurant.service";
@@ -10,13 +9,7 @@ import { Restaurant } from "../../../shared/models/restaurant.model";
 @Component({
   selector: "app-restaurant-list",
   standalone: true,
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatChipsModule,
-    MatProgressSpinnerModule,
-    RouterLink,
-  ],
+  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule, RouterLink],
   templateUrl: "./restaurant-list.component.html",
   styleUrls: ["./restaurant-list.component.scss"],
 })

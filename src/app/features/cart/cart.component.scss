@@ -12,13 +12,13 @@
 
 .page-header p {
   margin: 6px 0 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(226, 232, 240, 0.7);
 }
 
 .empty-state {
   padding: 32px 0;
   text-align: center;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(226, 232, 240, 0.7);
 }
 
 .cart-list {
@@ -32,6 +32,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  background: rgba(17, 24, 39, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #f8fafc;
 }
 
 .item-info h3 {
@@ -40,7 +43,7 @@
 
 .item-meta {
   margin: 0 0 4px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(226, 232, 240, 0.7);
 }
 
 .item-price {
@@ -58,7 +61,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(148, 163, 184, 0.4);
   border-radius: 8px;
   padding: 4px 8px;
 }
@@ -72,7 +75,7 @@
 
 .summary .hint {
   margin: 4px 0 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(226, 232, 240, 0.7);
 }
 
 .total {
