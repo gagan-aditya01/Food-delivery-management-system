@@ -1,0 +1,22 @@
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-title {
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.app-content {
+  padding: 24px;
+}
+
+.active-link {
+  font-weight: 600;
+}

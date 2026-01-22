@@ -1,0 +1,36 @@
+<section class="page-header">
+  <div>
+    <h1>Restaurants</h1>
+    <p>Browse popular restaurants and cuisines near you.</p>
+  </div>
+</section>
+
+<section *ngIf="isLoading" class="loading">
+  <mat-spinner diameter="48"></mat-spinner>
+  <span>Loading restaurants...</span>
+</section>
+
+<section *ngIf="errorMessage" class="error">
+  {{ errorMessage }}
+</section>
+
+<section class="restaurant-grid" *ngIf="!isLoading && !errorMessage">
+  <mat-card
+    class="restaurant-card"
+    *ngFor="let restaurant of restaurants"
+    [routerLink]="['/menu', restaurant.id]"
+  >
+    <img mat-card-image [src]="restaurant.imageUrl" [alt]="restaurant.name" />
+    <mat-card-header>
+      <mat-card-title>{{ restaurant.name }}</mat-card-title>
+      <mat-card-subtitle>{{ restaurant.cuisineType }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="meta">
+        <mat-chip color="primary" selected>{{ restaurant.rating }} ★</mat-chip>
+        <span>{{ restaurant.deliveryTime }}</span>
+        <span>{{ restaurant.priceRange }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>

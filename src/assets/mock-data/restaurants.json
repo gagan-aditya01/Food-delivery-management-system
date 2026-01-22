@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Spice Route Kitchen",
+    "cuisineType": "Indian",
+    "rating": 4.6,
+    "deliveryTime": "25-35 min",
+    "priceRange": "$$",
+    "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 2,
+    "name": "Sakura Ramen House",
+    "cuisineType": "Japanese",
+    "rating": 4.7,
+    "deliveryTime": "30-40 min",
+    "priceRange": "$$$",
+    "imageUrl": "https://images.unsplash.com/photo-1546069901-eacef0df6022?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 3,
+    "name": "Bella Napoli",
+    "cuisineType": "Italian",
+    "rating": 4.5,
+    "deliveryTime": "20-30 min",
+    "priceRange": "$$",
+    "imageUrl": "https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 4,
+    "name": "Green Garden Bowls",
+    "cuisineType": "Healthy",
+    "rating": 4.3,
+    "deliveryTime": "15-25 min",
+    "priceRange": "$$",
+    "imageUrl": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 5,
+    "name": "Taco Loco",
+    "cuisineType": "Mexican",
+    "rating": 4.4,
+    "deliveryTime": "25-35 min",
+    "priceRange": "$",
+    "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 6,
+    "name": "Urban Grill",
+    "cuisineType": "American",
+    "rating": 4.2,
+    "deliveryTime": "35-45 min",
+    "priceRange": "$$",
+    "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
+  }
+]

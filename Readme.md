@@ -37,7 +37,8 @@ This project is a single-page web application for browsing restaurants, viewing 
 
 1. Install dependencies:
    - npm install
-2. Run the development server (after Angular app is created):
+     > **Note:** The project structure was generated manually. Run `npm install` to download required packages.
+2. Run the development server:
    - ng serve
 3. Open the app in a browser at:
    - [Port 4200](http://localhost:4200/)

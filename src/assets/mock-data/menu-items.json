@@ -1,0 +1,136 @@
+[
+  {
+    "id": 101,
+    "restaurantId": 1,
+    "name": "Butter Chicken",
+    "description": "Creamy tomato gravy with tender chicken pieces.",
+    "price": 320,
+    "category": "Main Course",
+    "isVeg": false,
+    "isSpicy": true,
+    "isPopular": true,
+    "imageUrl": "https://images.unsplash.com/photo-1604908177521-4723f6d3b3a6?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 102,
+    "restaurantId": 1,
+    "name": "Paneer Tikka",
+    "description": "Char-grilled cottage cheese with spices.",
+    "price": 260,
+    "category": "Starters",
+    "isVeg": true,
+    "isSpicy": false,
+    "isPopular": true,
+    "imageUrl": "https://images.unsplash.com/photo-1546069901-3ef52f12f47b?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 103,
+    "restaurantId": 1,
+    "name": "Jeera Rice",
+    "description": "Aromatic basmati rice with cumin.",
+    "price": 160,
+    "category": "Sides",
+    "isVeg": true
+  },
+  {
+    "id": 201,
+    "restaurantId": 2,
+    "name": "Tonkotsu Ramen",
+    "description": "Rich pork broth with noodles and soft egg.",
+    "price": 420,
+    "category": "Main Course",
+    "isVeg": false,
+    "isPopular": true,
+    "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 202,
+    "restaurantId": 2,
+    "name": "Veg Miso Ramen",
+    "description": "Miso broth with seasonal veggies and tofu.",
+    "price": 360,
+    "category": "Main Course",
+    "isVeg": true,
+    "imageUrl": "https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 301,
+    "restaurantId": 3,
+    "name": "Margherita Pizza",
+    "description": "Classic pizza with tomato, basil, and mozzarella.",
+    "price": 300,
+    "category": "Main Course",
+    "isVeg": true,
+    "isPopular": true,
+    "imageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 302,
+    "restaurantId": 3,
+    "name": "Pasta Alfredo",
+    "description": "Creamy Alfredo sauce with mushrooms.",
+    "price": 280,
+    "category": "Main Course",
+    "isVeg": true
+  },
+  {
+    "id": 401,
+    "restaurantId": 4,
+    "name": "Quinoa Power Bowl",
+    "description": "Quinoa, avocado, greens, and citrus dressing.",
+    "price": 260,
+    "category": "Bowls",
+    "isVeg": true,
+    "isPopular": true,
+    "imageUrl": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 402,
+    "restaurantId": 4,
+    "name": "Roasted Veggie Salad",
+    "description": "Warm roasted vegetables with feta.",
+    "price": 240,
+    "category": "Salads",
+    "isVeg": true
+  },
+  {
+    "id": 501,
+    "restaurantId": 5,
+    "name": "Chicken Tacos",
+    "description": "Soft tacos with grilled chicken and salsa.",
+    "price": 220,
+    "category": "Main Course",
+    "isVeg": false,
+    "isSpicy": true,
+    "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 502,
+    "restaurantId": 5,
+    "name": "Guacamole & Chips",
+    "description": "Fresh guacamole with crispy tortilla chips.",
+    "price": 150,
+    "category": "Starters",
+    "isVeg": true
+  },
+  {
+    "id": 601,
+    "restaurantId": 6,
+    "name": "BBQ Burger",
+    "description": "Smoky BBQ sauce with cheddar and fries.",
+    "price": 340,
+    "category": "Burgers",
+    "isVeg": false,
+    "isPopular": true,
+    "imageUrl": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 602,
+    "restaurantId": 6,
+    "name": "Grilled Veggie Wrap",
+    "description": "Grilled vegetables with hummus and herbs.",
+    "price": 210,
+    "category": "Wraps",
+    "isVeg": true
+  }
+]

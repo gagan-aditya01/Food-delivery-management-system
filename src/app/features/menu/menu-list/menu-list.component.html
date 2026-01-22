@@ -1,0 +1,49 @@
+<section class="page-header">
+  <div>
+    <a class="back-link" routerLink="/restaurants">← Back to restaurants</a>
+    <h1>{{ restaurant?.name || "Menu" }}</h1>
+    <p *ngIf="restaurant">
+      {{ restaurant.cuisineType }} · {{ restaurant.deliveryTime }}
+    </p>
+  </div>
+</section>
+
+<section *ngIf="isLoading" class="loading">
+  <mat-spinner diameter="48"></mat-spinner>
+  <span>Loading menu...</span>
+</section>
+
+<section *ngIf="errorMessage" class="error">
+  {{ errorMessage }}
+</section>
+
+<section class="menu-grid" *ngIf="!isLoading && !errorMessage">
+  <mat-card class="menu-card" *ngFor="let item of menuItems">
+    <img
+      *ngIf="item.imageUrl"
+      mat-card-image
+      [src]="item.imageUrl"
+      [alt]="item.name"
+    />
+    <mat-card-header>
+      <mat-card-title>{{ item.name }}</mat-card-title>
+      <mat-card-subtitle>{{ item.category }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ item.description }}</p>
+      <div class="meta">
+        <mat-chip color="primary" selected>₹{{ item.price }}</mat-chip>
+        <mat-chip *ngIf="item.isVeg" color="accent" selected>Veg</mat-chip>
+        <mat-chip *ngIf="item.isSpicy" color="warn" selected>Spicy</mat-chip>
+        <mat-chip *ngIf="item.isPopular" selected>Popular</mat-chip>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<section
+  class="empty-state"
+  *ngIf="!isLoading && !errorMessage && menuItems.length === 0"
+>
+  <p>No menu items found for this restaurant.</p>
+</section>
