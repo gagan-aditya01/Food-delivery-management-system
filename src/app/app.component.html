@@ -1,17 +1,22 @@
 <mat-toolbar color="primary" class="app-toolbar">
-  <span class="app-title">Food Delivery</span>
+  <a class="app-title" routerLink="/restaurants">Food Delivery</a>
   <span class="spacer"></span>
-  <a mat-button routerLink="/restaurants" routerLinkActive="active-link"
-    >Restaurants</a
-  >
-  <a mat-button routerLink="/cart" routerLinkActive="active-link">
-    <span [matBadge]="(cartCount$ | async) ?? 0" matBadgeOverlap="false">
-      Cart
-    </span>
-  </a>
-  <a mat-button routerLink="/order-status" routerLinkActive="active-link">
-    Order Status
-  </a>
+  <nav class="nav-links">
+    <a mat-button routerLink="/restaurants" routerLinkActive="active-link"
+      >Restaurants</a
+    >
+    <a mat-button routerLink="/cart" routerLinkActive="active-link">
+      <span [matBadge]="(cartCount$ | async) ?? 0" matBadgeOverlap="false">
+        Cart
+      </span>
+    </a>
+    <a mat-button routerLink="/checkout" routerLinkActive="active-link">
+      Checkout
+    </a>
+    <a mat-button routerLink="/order-status" routerLinkActive="active-link">
+      Order Status
+    </a>
+  </nav>
 </mat-toolbar>
 
 <main class="app-content">
